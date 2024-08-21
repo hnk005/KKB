@@ -1,0 +1,6 @@
+{"level":"error","message":"error"}
+{"level":"error","message":"Error: Table 'WebSell.User' doesn't exist/media/hnk/DATA/HNK/DEV/Project/WebSell/server/src/controllers"}
+{"level":"error","message":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sql":"SELECT * FROM User","sqlMessage":"Table 'WebSell.User' doesn't exist","sqlState":"42S02"}}
+{"level":"error","message":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sql":"SELECT * FROM User","sqlMessage":"Table 'WebSell.User' doesn't exist","sqlState":"42S02"}}
+{"level":"error","message":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sql":"SELECT * FROM User","sqlMessage":"Table 'WebSell.User' doesn't exist","sqlState":"42S02"}}
+{"level":"error","message":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sql":"SELECT * FROM User","sqlMessage":"Table 'WebSell.User' doesn't exist","sqlState":"42S02"}}

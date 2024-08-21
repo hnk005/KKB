@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="category-list">
+        <div *ngFor="let item of items" style="display: flex;">
+            <div class="category-item" (mousemove)="item.command(item)" >
+                <span style="padding: 0 8px 0 8px;" class='material-icons'>{{item.icon}}</span>
+                <p style="padding: 0 8px 0 8px; max-width: 200px;">{{item.label}}</p>       
+            </div>
+        </div>
+    </div>
+    <div style="position: relative;" *ngIf="showItemSelect && itemSelect">
+        <div class="category-list-item" >
+            <div *ngFor="let item of itemSelect.item" style="padding: 5px 20px 5px 20px;">
+                <p style="color: blue;">{{item.label}}</p>
+                <div>
+                    <div *ngFor="let text of item.item">
+                        <p>{{text}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

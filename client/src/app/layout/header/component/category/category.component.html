@@ -1,0 +1,9 @@
+<div class="category">
+    <div class="category-item" (click)="showList()">
+        <p style="color: #6b7280; padding: 0 0 0 5px;">Danh mục</p>
+        <span style="color: #6b7280; padding: 0 10px 0 10px;" class={{classIcon}}></span>
+    </div>
+    <div *ngIf="show" class="category-list">
+        <app-category-list (showComponent)="showComponent($event)"/>
+    </div>
+</div>

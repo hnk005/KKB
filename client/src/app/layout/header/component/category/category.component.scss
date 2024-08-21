@@ -1,0 +1,11 @@
+.category-item{
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}

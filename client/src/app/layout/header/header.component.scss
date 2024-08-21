@@ -1,0 +1,61 @@
+@import '../../../theme.scss';
+
+$headerHeight: 110px;
+$navWidth: 1280px;
+$navTitle: 35px;
+
+.centered {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.item__link {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 8px 0 8px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: $headerHeight;
+    background-color: $mainColor;
+    &-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: $navWidth;
+        height: 100%;
+    }
+}
+
+.search-item {
+    width: 100%;
+    padding: 0 8px 0 8px;
+}
+
+
+//flex layout 
+
+.nav-title {
+    flex: 1;
+}
+.nav-category {
+    flex: 2;
+}
+.nav-search {
+    flex: 5;
+}
+.nav-bell {
+    flex: 2;
+}
+.nav-cart {
+    flex: 2;
+}
+.nav-user {
+    flex: 2;
+}
+

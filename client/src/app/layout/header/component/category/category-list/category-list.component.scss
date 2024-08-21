@@ -1,0 +1,48 @@
+@import '../../../../../../theme.scss';
+
+.container {
+    margin-top: 20px;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.category-list-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 500px;
+    min-width: 800px;
+    background-color: #fff;
+    margin-left: -10px;
+    position: fixed; 
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border-width: 1px;
+    padding: 10px;
+    margin-left: 0px;
+}
+
+.category-item {
+    user-select: none;
+    display: flex; 
+    flex-direction: row;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    &:hover {
+        background-color: #f8f8f8;
+        p {
+            color: $mainColor;
+        }
+    }
+    
+}

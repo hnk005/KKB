@@ -1,0 +1,30 @@
+{"level":"info","message":"Server is running on http://localhost:3000/api"}
+{"level":"info","message":"Đã kết nối đến cơ sở dữ liệu MySQL với ID: 154"}
+{"level":"info","message":"Server is running on http://localhost:3000/api"}
+{"level":"info","message":"Đã kết nối đến cơ sở dữ liệu MySQL với ID: 155"}
+{"level":"info","message":"Server is running on http://localhost:3000/api"}
+{"level":"info","message":"Đã kết nối đến cơ sở dữ liệu MySQL với ID: 156"}
+{"level":"error","message":"error"}
+{"level":"error","message":"Error: Table 'WebSell.User' doesn't exist/media/hnk/DATA/HNK/DEV/Project/WebSell/server/src/controllers"}
+{"level":"http","message":"GET /api/user/getAll 304 - - 7.232 ms\n"}
+{"level":"http","message":"GET /favicon.ico 404 150 - 1.827 ms\n"}
+{"level":"info","message":"Server is running on http://localhost:3000/api"}
+{"level":"info","message":"Đã kết nối đến cơ sở dữ liệu MySQL với ID: 157"}
+{"level":"error","message":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sql":"SELECT * FROM User","sqlMessage":"Table 'WebSell.User' doesn't exist","sqlState":"42S02"}}
+{"level":"http","message":"GET /api/user/getAll 304 - - 5.997 ms\n"}
+{"level":"http","message":"GET /favicon.ico 404 150 - 2.147 ms\n"}
+{"level":"info","message":"Server is running on http://localhost:3000/api"}
+{"level":"info","message":"Đã kết nối đến cơ sở dữ liệu MySQL với ID: 158"}
+{"level":"error","message":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sql":"SELECT * FROM User","sqlMessage":"Table 'WebSell.User' doesn't exist","sqlState":"42S02"}}
+{"level":"info","message":"Server is running on http://localhost:3000/api"}
+{"level":"info","message":"Đã kết nối đến cơ sở dữ liệu MySQL với ID: 159"}
+{"level":"error","message":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sql":"SELECT * FROM User","sqlMessage":"Table 'WebSell.User' doesn't exist","sqlState":"42S02"}}
+{"level":"info","message":"Server is running on http://localhost:3000/api"}
+{"level":"info","message":"Đã kết nối đến cơ sở dữ liệu MySQL với ID: 160"}
+{"level":"http","message":"POST /api/user/getAll 404 155 - 10.748 ms\n"}
+{"level":"error","message":{"code":"ER_NO_SUCH_TABLE","errno":1146,"sql":"SELECT * FROM User","sqlMessage":"Table 'WebSell.User' doesn't exist","sqlState":"42S02"}}
+{"level":"http","message":"GET /api/user/getAll 400 22 - 2.718 ms\n"}
+{"level":"info","message":"Server is running on http://localhost:3000/api"}
+{"level":"info","message":"Đã kết nối đến cơ sở dữ liệu MySQL với ID: 161"}
+{"level":"info","message":"Server is running on http://localhost:3000/api"}
+{"level":"info","message":"Đã kết nối đến cơ sở dữ liệu MySQL với ID: 162"}
