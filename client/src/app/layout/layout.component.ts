@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class LayoutComponent {
   constructor () {
   }
+
+ onClick() {
+    console.log('click out')
+ }
 }

@@ -1,17 +1,77 @@
 import { Component, ElementRef, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { CategoryService } from '../category.service';
+import Category from '../../../../../core/interfaces/category.interface';
 
-
-interface Category {
-  label: string,
-  icon: string,
-  item: CategoryListItem[],
-  command: (item: Category) => void;
-}
-
-interface CategoryListItem {
-  label: string,
-  item: string[],
-}
+// items : Category[] = [
+//   { 
+//     label: 'Bàn phím mới', 
+//     icon: 'keyboard',
+//     item: [
+//       {
+//         label: 'Loại Bàn Phím',
+//         item: ,
+//       },
+//       {
+//         label: 'Loại Switch',
+//         item: this.item2,
+//       }
+//     ],
+//     command: (item) => {
+//       this.itemSelect= item;
+//     },
+//   },
+//   { 
+//     label: 'Bàn phím cũ',  
+//     icon: 'keyboard_alt',
+//     item: [
+//       {
+//         label: 'Loại Bàn Phím',
+//         item: this.item1,
+//       },
+//       {
+//         label: 'Loại Switch',
+//         item: this.item2,
+//       }
+//     ],
+//     command: (item) => {
+//       this.itemSelect= item;
+//     },
+//   },
+//   { 
+//     label: 'Dụng cụ',  
+//     icon: 'construction',
+//     item: [
+//       {
+//         label: 'Loại Bàn Phím',
+//         item: this.item1,
+//       },
+//       {
+//         label: 'Loại Switch',
+//         item: this.item2,
+//       }
+//     ],
+//     command: (item) => {
+//       this.itemSelect= item;
+//     },
+//   },
+//   { 
+//     label: 'Phụ kiện',  
+//     icon: 'power',
+//     item: [
+//       {
+//         label: 'Loại Bàn Phím',
+//         item: this.item1,
+//       },
+//       {
+//         label: 'Loại Switch',
+//         item: this.item2,
+//       }
+//     ],
+//     command: (item) => {
+//       this.itemSelect= item;
+//     },
+//   },
+// ];
 
 @Component({
   selector: 'app-category-list',
@@ -19,111 +79,17 @@ interface CategoryListItem {
   styleUrl: './category-list.component.scss'
 })
 export class CategoryListComponent implements OnDestroy{
-  static header : string = 'Danh mục';
-  static position : string = 'top-left';
 
-  item1 = ['Bàn Phím Cơ','Bàn Phím Membrane', 'Bàn Phím Gaming', 'Bàn Phím Văn Phòng','Bàn Phím Mini'];
-  item2 = ['Cherry MX', 'Razer', 'Kailh', 'Gateron'];
-
-
-  itemSelect! : Category;
-
-  showItemSelect = false;
-
-  items : Category[] = [
-    { 
-      label: 'Bàn phím mới', 
-      icon: 'keyboard',
-      item: [
-        {
-          label: 'Loại Bàn Phím',
-          item: this.item1,
-        },
-        {
-          label: 'Loại Switch',
-          item: this.item2,
-        }
-      ],
-      command: (item) => {
-        this.itemSelect= item;
-      },
-    },
-    { 
-      label: 'Bàn phím cũ',  
-      icon: 'keyboard_alt',
-      item: [
-        {
-          label: 'Loại Bàn Phím',
-          item: this.item1,
-        },
-        {
-          label: 'Loại Switch',
-          item: this.item2,
-        }
-      ],
-      command: (item) => {
-        this.itemSelect= item;
-      },
-    },
-    { 
-      label: 'Dụng cụ',  
-      icon: 'construction',
-      item: [
-        {
-          label: 'Loại Bàn Phím',
-          item: this.item1,
-        },
-        {
-          label: 'Loại Switch',
-          item: this.item2,
-        }
-      ],
-      command: (item) => {
-        this.itemSelect= item;
-      },
-    },
-    { 
-      label: 'Phụ kiện',  
-      icon: 'power',
-      item: [
-        {
-          label: 'Loại Bàn Phím',
-          item: this.item1,
-        },
-        {
-          label: 'Loại Switch',
-          item: this.item2,
-        }
-      ],
-      command: (item) => {
-        this.itemSelect= item;
-      },
-    },
-  ];
-
-  constructor(private elementRef: ElementRef) {}
+  items! : Category[];
   
-  show = false;
 
-  @Output() showComponent = new EventEmitter<boolean>();
+  constructor(private elementRef: ElementRef, private cService: CategoryService) {
+    this.items = this.cService.category;
+  }
 
-  @HostListener('document:click', ['$event'])
-  clickout(event : Event) {
-    if (!this.show) {
-      this.show = true;
-    } else if(!this.elementRef.nativeElement.contains(event.target)) {
-      this.showComponent.emit(false);
-    }
-  };
-
-  @HostListener('document:mouseover', ['$event'])
-  moveOut(event: Event) {
-    if(!this.elementRef.nativeElement.contains(event.target)) { 
-      this.showItemSelect = false;
-    } else {
-      this.showItemSelect = true;
-    }
-  };
+  show(item : Category) {
+    this.cService.showCategory(item);
+  }
 
   ngOnDestroy(): void {
     console.log('close')
