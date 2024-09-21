@@ -1,5 +1,5 @@
 import { createContext, PropsWithChildren, useContext, useEffect, useState} from "react";
-import { useBreakpoints } from "./Breakpoints.provider";
+import { useBreakpoints } from "../../../providers/Breakpoints.provider";
 
 interface TopbarContextInteface {
     isMobile: boolean;

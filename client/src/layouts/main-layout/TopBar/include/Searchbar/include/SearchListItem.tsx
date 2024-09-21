@@ -1,19 +1,11 @@
-import IconifyIcon from "@components/base/IconifyIcon";
+import { memo, ReactElement } from "react";
 import productItems from "@data/product-item";
-import { ElementProps } from "@core/type";
-import { Box, ListItemButton, ListItemIcon, ListItemText } from "@mui/material"
-import { ReactElement } from "react"
+import { Box } from "@mui/material";
 import SearchItem from "./SearchItem";
+import { useSearchbar } from "../provider";
 
-interface SearchListItemProps {
-    text: string;
-    show: boolean;
-}
-
-const SearchListItem : ElementProps<SearchListItemProps> = ({
-    text,
-    show,
-}) : ReactElement => {
+const SearchListItem = () : ReactElement => {
+    const {text, showList} = useSearchbar();
     return (
         <Box 
             sx={{
@@ -21,17 +13,17 @@ const SearchListItem : ElementProps<SearchListItemProps> = ({
                 backgroundColor: 'background.paper',
                 ml: {sm: 0, xs: 10},
                 borderRadius: 2,
-                visibility: show ? 'visible' : 'hidden',
+                visibility: showList ? 'visible' : 'hidden',
                 position: 'absolute',
                 top: 60,
             }}
         >
             {productItems.map((item : any, i) => 
-                i < 5 && item.name.toLowerCase().includes(text) &&
-                <SearchItem item= {item}/>
+                i < 5 && item.name.toLowerCase().includes(text.toLowerCase()) &&
+                <SearchItem key={i} item= {item}/>
             )}
         </Box>
     )
 }
 
-export default SearchListItem;
+export default memo(SearchListItem);

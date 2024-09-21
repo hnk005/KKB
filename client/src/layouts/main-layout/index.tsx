@@ -1,7 +1,7 @@
 import { useState, ReactElement, PropsWithChildren } from 'react';
 import { Box, Toolbar, Container } from '@mui/material';
 import Topbar from './TopBar';
-import TopbarProvider from '@/providers/Topbar.provider';
+import TopbarProvider from '@/layouts/main-layout/TopBar/provider';
 
 const MainLayout = ({ children }: PropsWithChildren): ReactElement => {
   return (

@@ -1,23 +1,13 @@
-import { memo, ReactElement, useEffect, useRef, useState} from 'react'
+import { memo, ReactElement } from 'react'
 import IconifyIcon from "@/components/base/IconifyIcon"
-import { IconButton, TextField } from "@mui/material"
-import { useTopbar } from '@/providers/Topbar.provider';
-import { ElementProps } from '@/core/type';
+import { Hidden, IconButton, TextField } from "@mui/material"
+import { useTopbar } from '@/layouts/main-layout/TopBar/provider';
+import { useSearchbar } from '../provider';
 
-interface SearchInputProps {
-    searchText: string;
-    setSearchText: (text: string) => void;
-    showList: () => void;
-    hiddenList: () => void;
-}
+const SearchInput = () : ReactElement => {
+    const { showSearchMobile, toggleSearhMobile} = useTopbar();
+    const { text, enterText, visibleList, hiddenList} = useSearchbar();
 
-const SearchInput : ElementProps<SearchInputProps> = ({
-    searchText,
-    setSearchText,
-    showList,
-    hiddenList
-}) : ReactElement => {
-    const {showSearchMobile, toggleSearhMobile} = useTopbar();
     return (
         <>
             <IconButton
@@ -32,8 +22,8 @@ const SearchInput : ElementProps<SearchInputProps> = ({
                   <IconifyIcon icon= {showSearchMobile ? 'basil:arrow-left-outline' : "mdi:search" } />
             </IconButton>
             <TextField
-                value= {searchText}
-                onChange= {(e) => setSearchText(e.target.value)}
+                value= {text}
+                onChange= {(e) => enterText(e.target.value)}
                 variant= 'outlined'
                 fullWidth
                 placeholder= "Nhập từ khóa"
@@ -50,21 +40,40 @@ const SearchInput : ElementProps<SearchInputProps> = ({
                     {
                         input: {
                             endAdornment: (
-                                <IconButton
+                                <>
+                                    <IconButton
                                     sx={{
-                                        padding: 5,
                                         cursor: 'pointer',
                                         borderRadius: 10,
                                         color: 'text.secondary',
+                                        visibility: text ? 'visible' : 'hidden',
                                         height: 40,
+                                        width: 40,
                                         ':hover': {
                                             backgroundColor: 'action.hover'
                                         }
                                     }}
-                                    onClick={() => console.log('search')}
-                                >
-                                <IconifyIcon icon="akar-icons:search" width={13} height={13}/>
-                                </IconButton>
+                                    onClick={() => enterText('')}
+                                    >
+                                        <IconifyIcon icon="bi:x" width={30} height={30}/>
+                                    </IconButton>
+                                    <IconButton
+                                        sx={{
+                                            padding: 5,
+                                            cursor: 'pointer',
+                                            borderRadius: 10,
+                                            color: 'text.secondary',
+                                            height: 40,
+                                            ':hover': {
+                                                backgroundColor: 'action.hover'
+                                            }
+                                        }}
+                                        onClick={() => console.log('search')}
+                                    >
+                                        <IconifyIcon icon="akar-icons:search" width={20} height={20}/>
+                                    </IconButton>
+                                </>
+                                
                             ),
                             style: {
                                 borderRadius: 10,
@@ -72,8 +81,7 @@ const SearchInput : ElementProps<SearchInputProps> = ({
                         }
                     }
                 }
-                onClick= {showList}
-                onFocus= {showList}
+                onFocus= {visibleList}
                 onBlur= {hiddenList}
             />
         </>

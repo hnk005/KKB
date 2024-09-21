@@ -58,7 +58,6 @@ const UserDropdown = (): ReactElement => {
             sx={{ 
               typography: 'body1', 
               fontWeight: 500, 
-              textTransform: 'none', 
               minWidth: 100,
             }}
           >

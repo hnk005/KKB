@@ -16,7 +16,7 @@ import Image from '@components/base/Image';
 import logoWithText from '@public/Logo-with-text.png';
 import logo from '@public/Logo.png';
 import ShoppingCart from './include/ShoppingCart';
-import { useTopbar } from '@/providers/Topbar.provider';
+import { useTopbar } from '@/layouts/main-layout/TopBar/provider';
 
 const Topbar = () : ReactElement => {
   const {showSearchMobile} = useTopbar();
@@ -65,7 +65,6 @@ const Topbar = () : ReactElement => {
               >
                  <Searchbar />
               </Stack>
-             
             </Stack>
             {!showSearchMobile && <Stack
               direction="row"

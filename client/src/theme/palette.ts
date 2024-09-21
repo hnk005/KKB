@@ -38,7 +38,7 @@ const palette: PaletteOptions = {
   },
   text: {
     primary: stone[900],
-    secondary: stone[700],
+    secondary: stone[600],
     disabled: stone[500]
   },
   divider: stone[700],
