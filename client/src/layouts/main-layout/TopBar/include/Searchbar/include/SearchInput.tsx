@@ -1,13 +1,13 @@
-import { memo, ReactElement } from 'react'
+import { memo, ReactElement, useEffect} from 'react'
 import IconifyIcon from "@/components/base/IconifyIcon"
-import { Hidden, IconButton, TextField } from "@mui/material"
+import { IconButton, TextField } from "@mui/material"
 import { useTopbar } from '@/layouts/main-layout/TopBar/provider';
 import { useSearchbar } from '../provider';
 
 const SearchInput = () : ReactElement => {
-    const { showSearchMobile, toggleSearhMobile} = useTopbar();
+    const { isMobile, showSearchMobile, toggleSearchMobile} = useTopbar();
     const { text, enterText, visibleList, hiddenList} = useSearchbar();
-
+    
     return (
         <>
             <IconButton
@@ -17,7 +17,7 @@ const SearchInput = () : ReactElement => {
                     width: 40,
                     height: 40,
                   }}
-                  onClick={toggleSearhMobile}
+                  onClick={toggleSearchMobile}
               >
                   <IconifyIcon icon= {showSearchMobile ? 'basil:arrow-left-outline' : "mdi:search" } />
             </IconButton>
@@ -42,18 +42,20 @@ const SearchInput = () : ReactElement => {
                             endAdornment: (
                                 <>
                                     <IconButton
-                                    sx={{
-                                        cursor: 'pointer',
-                                        borderRadius: 10,
-                                        color: 'text.secondary',
-                                        visibility: text ? 'visible' : 'hidden',
-                                        height: 40,
-                                        width: 40,
-                                        ':hover': {
-                                            backgroundColor: 'action.hover'
-                                        }
-                                    }}
-                                    onClick={() => enterText('')}
+                                        sx={{
+                                            cursor: 'pointer',
+                                            borderRadius: 10,
+                                            color: 'text.secondary',
+                                            visibility: 
+                                                isMobile ? (text !== '' && showSearchMobile ? 'visible' : 'hidden') 
+                                                : (text !== '' ? 'visible' : 'hidden'),
+                                            height: 40,
+                                            width: 40,
+                                            ':hover': {
+                                                backgroundColor: 'action.hover'
+                                            }
+                                        }}
+                                        onClick={() => enterText('')}
                                     >
                                         <IconifyIcon icon="bi:x" width={30} height={30}/>
                                     </IconButton>

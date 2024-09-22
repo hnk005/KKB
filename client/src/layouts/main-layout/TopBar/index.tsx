@@ -2,20 +2,19 @@ import {
     Stack,
     AppBar,
     Toolbar,
-    IconButton,
     Link,
     Container,
 } from '@mui/material';
-import IconifyIcon from '@components/base/IconifyIcon';
-import { ReactElement, useEffect, useState } from 'react';
+// import IconifyIcon from '@components/base/IconifyIcon';
+import { ReactElement } from 'react';
 import UserDropdown from './include/User';
 import Notification from './include/Notificaiton';
 import Searchbar from './include/Searchbar';
 import { rootPaths } from '@/router/paths';
 import Image from '@components/base/Image';
 import logoWithText from '@public/Logo-with-text.png';
-import logo from '@public/Logo.png';
-import ShoppingCart from './include/ShoppingCart';
+// import logo from '@public/Logo.png';
+import ShoppingCart from './include/Cart';
 import { useTopbar } from '@/layouts/main-layout/TopBar/provider';
 
 const Topbar = () : ReactElement => {

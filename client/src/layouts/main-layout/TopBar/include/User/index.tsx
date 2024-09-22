@@ -1,4 +1,4 @@
-import { Menu, Avatar, Button, Tooltip, MenuItem, ListItemIcon, ListItemText, Box } from '@mui/material';
+import { Menu, Avatar, Button, MenuItem, ListItemIcon, ListItemText, Box } from '@mui/material';
 import IconifyIcon from '@components/base/IconifyIcon';
 import profile from '@assets/images/account/Profile.png';
 import { useState, MouseEvent, useCallback, ReactElement, memo} from 'react';
@@ -58,6 +58,7 @@ const UserDropdown = (): ReactElement => {
             sx={{ 
               typography: 'body1', 
               fontWeight: 500, 
+              textTransform: 'none', 
               minWidth: 100,
             }}
           >

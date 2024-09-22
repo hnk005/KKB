@@ -1,4 +1,4 @@
-import { memo, ReactElement } from "react"
+import { memo, ReactElement, useMemo } from "react"
 import { 
     ListItemButton,
     ListItemIcon,
@@ -9,7 +9,8 @@ import { useSearchbar } from "../provider";
 
 const SearchItem = ({item} : {item: {name: string}}) : ReactElement => {
     const { enterText } = useSearchbar();
-    return (
+
+    return useMemo(() =>
         <ListItemButton 
             component="a" 
             href="#" 
@@ -28,7 +29,7 @@ const SearchItem = ({item} : {item: {name: string}}) : ReactElement => {
             </ListItemIcon>
             <ListItemText sx= {{m: 0}} primary= {item.name}/>
         </ListItemButton>
-    )
+    , [])
 }
 
 export default memo(SearchItem);

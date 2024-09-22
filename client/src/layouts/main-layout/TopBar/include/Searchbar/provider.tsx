@@ -21,15 +21,14 @@ const searchbarStore = create<SearchbarContextInterface>((set) => ({
 const SearchbarContext = createContext({} as SearchbarContextInterface);
 
 const SearchbarProvider = ({ children }: PropsWithChildren)  => {
-    const {
-        text,
-        showList,
-        enterText,
-        visibleList,
-        hiddenList
-    } = searchbarStore();
 
-    const {isMobile} = useTopbar();
+    const { isMobile } = useTopbar();
+
+    const text = searchbarStore((state) => state.text);
+    const showList = searchbarStore((state) => state.showList);
+    const enterText = searchbarStore((state) => state.enterText);
+    const visibleList = searchbarStore((state) => state.visibleList);
+    const hiddenList = searchbarStore((state) => state.hiddenList);
 
     useEffect(() => {
         if(isMobile && showList) {

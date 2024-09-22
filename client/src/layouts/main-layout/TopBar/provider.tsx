@@ -1,32 +1,57 @@
-import { createContext, PropsWithChildren, useContext, useEffect, useState} from "react";
-import { useBreakpoints } from "../../../providers/Breakpoints.provider";
+import { 
+    createContext, 
+    PropsWithChildren, 
+    useContext, 
+    useEffect, 
+} from "react";
+import { useBreakpoints } from "@providers/Breakpoints.provider";
+import { create } from "zustand";
 
 interface TopbarContextInteface {
     isMobile: boolean;
     showSearchMobile: boolean;
-    toggleSearhMobile: () => void; 
+    setIsMobile: (mobile: boolean) => void;
+    toggleSearchMobile: () => void;
 }
+
+const topbarStore = create<TopbarContextInteface>((set) => ({
+    isMobile: false,
+    showSearchMobile: false,
+    setIsMobile: (mobile) => set({isMobile: mobile}),
+    toggleSearchMobile: () => set((state) => ({showSearchMobile: !state.showSearchMobile}))
+}))
 
 const TopbarContext = createContext({} as TopbarContextInteface);
 
 const TopbarProvider = ({ children }: PropsWithChildren) => {
     const { down } = useBreakpoints();
-    const isMobile = down('sm');
 
-    const [showSearchMobile, setShowSearchMobile] = useState(false);
+    const mobile = down('sm');
 
-    const toggleSearhMobile = () => {
-        setShowSearchMobile(!showSearchMobile);
-    }
+    const isMobile = topbarStore((state) => state.isMobile);
+    const showSearchMobile = topbarStore((state) => state.showSearchMobile);
+    const setIsMobile = topbarStore((state) => state.setIsMobile);
+    const toggleSearchMobile = topbarStore((state) => state.toggleSearchMobile);
 
     useEffect(() => {
         if(!isMobile && showSearchMobile) {
-            setShowSearchMobile(false);
+            toggleSearchMobile()
         }
     },[isMobile])
+    
+    useEffect(() => {
+        setIsMobile( mobile)
+    }, [mobile])
 
     return (
-        <TopbarContext.Provider value={{isMobile, showSearchMobile, toggleSearhMobile}}>
+        <TopbarContext.Provider 
+            value={{
+                isMobile,
+                showSearchMobile, 
+                setIsMobile,
+                toggleSearchMobile
+            }}
+        >
             {children}
         </TopbarContext.Provider>
     )
