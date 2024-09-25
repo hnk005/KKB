@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import { SnackbarProvider } from 'notistack';
-import BreakpointsProvider from './providers/Breakpoints.provider';
+import BreakpointsProvider from './providers/Breakpoints';
 import { ThemeProvider } from '@mui/material';
 import { Provider as StoreProvider } from 'react-redux';
 import router from '@router/router';

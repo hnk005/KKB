@@ -3,7 +3,7 @@ import { teal, grey, green, stone, fuchsia, bluishCyan, pinkishRed, yellowOrange
 
 const palette: PaletteOptions = {
   primary: {
-    light: teal[200],
+    light: teal[400],
     main: stone[0],
     dark: teal[800],
   },

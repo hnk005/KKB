@@ -1,7 +1,7 @@
 import { ReactElement, PropsWithChildren } from 'react';
 import { Box, Toolbar, Container } from '@mui/material';
-import Topbar from './TopBar';
-import TopbarProvider from '@/layouts/main-layout/TopBar/provider';
+import Topbar from './Topbar';
+import TopbarProvider from '@/layouts/main-layout/Topbar/provider';
 
 const MainLayout = ({ children }: PropsWithChildren): ReactElement => {
   return (
@@ -14,9 +14,12 @@ const MainLayout = ({ children }: PropsWithChildren): ReactElement => {
           component="main"
           overflow="auto"
           sx={{
+            // display: 'flex',
             width: 1,
             flexGrow: 1,
-            pt: 5,
+            // justifyContent: 'center',
+            // alignItems: 'center',
+            pt: 15,
             pr: { xs: 3, sm: 5.175 },
             pb: 6.25,
             pl: { xs: 3, sm: 5.25 },
@@ -27,7 +30,9 @@ const MainLayout = ({ children }: PropsWithChildren): ReactElement => {
               height: 96,
             }}
           />
-          {children}
+          <Box sx= {{display: "flex", justifyContent: 'center'}}>
+            {children}
+          </Box>
         </Box>
       </Box>
     </Container>
