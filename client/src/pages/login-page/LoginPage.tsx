@@ -12,7 +12,7 @@ const LoginPage = () : ReactElement => {
                 display: 'flex',
                 justifyContent: 'center',
                 width: 600,
-                height: 620,
+                height: 640,
                 minWidth: 400,
                 borderRadius: 3,
                 backgroundColor: 'background.paper',
@@ -25,28 +25,37 @@ const LoginPage = () : ReactElement => {
                 width={"70%"}
             >
                 <Box
-                    sx={{fontSize: 32, p: 5}}
+                    sx={{p: 5}}
                 >
-                    Đăng nhập
+                    <Typography
+                        sx = {{
+                            fontSize: 32,
+                        }}
+                    >
+                        Đăng nhập
+                    </Typography>
                 </Box>
                 <LoginForm/>
-                <Box
+                <Stack
+                    flexDirection={'row'}
+                    gap={2}
                     sx= {{
                         p: 5,
                     }}
                 >
-                    Không có tài khoản?
+                    <Typography>
+                        Không có tài khoản?
+                    </Typography>   
                     <Link
                         sx={{
                             color: 'primary.light',
                             cursor: 'pointer',
-                            pl: 2,
                         }}
                         href= {paths.register}
                     >
                         Đăng ký
                     </Link>
-                </Box>
+                </Stack>
                 <Box 
                     p={4}
                 >
