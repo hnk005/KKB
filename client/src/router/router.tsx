@@ -11,6 +11,7 @@ const App = lazy(() => import('@/App'));
 const LoginPage = lazy(() => import('@pages/login-page/LoginPage'));
 const RegisterPage = lazy(() => import('@pages/register-page/RegisterPage'));
 const HomePage = lazy(() => import('@pages/home-page/HomePage'));
+const ProductPage = lazy(() => import('@pages/product-page/ProductPage'));
 const ErrorPage = lazy(() => import('@pages/error-page/ErrorPage'));
 
 const routes: RouteObject[] = [
@@ -49,7 +50,13 @@ const routes: RouteObject[] = [
                         element: (
                             <RegisterPage/>
                         )
-                    }
+                    },
+                    {
+                        path: paths.product,
+                        element: (
+                            <ProductPage/>
+                        )
+                    },
                 ]
             }
         ]

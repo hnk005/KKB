@@ -40,7 +40,7 @@ const SettingPage = () : ReactElement => {
                     </Typography>   
                     <Link
                         sx={{
-                            color: 'primary.light',
+                            color: 'common.black',
                             cursor: 'pointer',
                         }}
                         href= {paths.login}

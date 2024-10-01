@@ -1,11 +1,11 @@
 import { PaletteOptions } from '@mui/material';
-import { teal, grey, green, stone, fuchsia, bluishCyan, pinkishRed, yellowOrange } from './colors';
+import { grey, green, stone, fuchsia, bluishCyan, pinkishRed, yellowOrange } from './colors';
 
 const palette: PaletteOptions = {
   primary: {
-    light: teal[400],
+    light: stone[200],
     main: stone[0],
-    dark: teal[800],
+    dark: stone[800],
   },
   secondary: {
     light: fuchsia[50],
@@ -45,6 +45,10 @@ const palette: PaletteOptions = {
   action: {
     focus: stone[400],
     disabled: stone[300],
+  },
+  common: {
+    black: "#198f9f",
+    white: "#4DBBC9" 
   },
   grey: grey,
 };

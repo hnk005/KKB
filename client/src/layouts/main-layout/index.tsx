@@ -14,11 +14,7 @@ const MainLayout = ({ children }: PropsWithChildren): ReactElement => {
           component="main"
           overflow="auto"
           sx={{
-            // display: 'flex',
             width: 1,
-            flexGrow: 1,
-            // justifyContent: 'center',
-            // alignItems: 'center',
             pt: 15,
             pr: { xs: 3, sm: 5.175 },
             pb: 6.25,
@@ -30,7 +26,12 @@ const MainLayout = ({ children }: PropsWithChildren): ReactElement => {
               height: 96,
             }}
           />
-          <Box sx= {{display: "flex", justifyContent: 'center'}}>
+          <Box 
+            sx= {{
+              display: "flex", 
+              justifyContent: 'center', 
+            }}
+          >
             {children}
           </Box>
         </Box>

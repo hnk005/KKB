@@ -1,7 +1,14 @@
 export interface ProductItem {
-    image: string,
+    id: number;
+    images: string[],
     name: string,
-    price: string,
+    price: number,
+    originalPrice: number,
+    colors: string[],
+    layout: string,
+    switchType: string[],
+    rate: number,
+    userRate: number,
 }
 
 export interface NotificationItem {
