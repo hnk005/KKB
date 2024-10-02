@@ -1,10 +1,12 @@
 import { ProductItem } from '@core/interface';
 import Keyboard from '@assets/images/product/keyboard.png';
+import Logitech_G_Pro_X_picture_1 from '@assets/images/product/Logitech G Pro X/picture-1.png';
+import Logitech_G_Pro_X_picture_2 from '@assets/images/product/Logitech G Pro X/picture-2.png';
 
 const productItems : ProductItem[] = [
     {
         id: 1,
-        images: [Keyboard],
+        images: [Logitech_G_Pro_X_picture_1, Logitech_G_Pro_X_picture_2],
         name: 'Logitech G Pro X',
         price: 3000000,
         originalPrice: 3290000,
