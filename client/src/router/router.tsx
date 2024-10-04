@@ -12,6 +12,7 @@ const LoginPage = lazy(() => import('@pages/login-page/LoginPage'));
 const RegisterPage = lazy(() => import('@pages/register-page/RegisterPage'));
 const HomePage = lazy(() => import('@pages/home-page/HomePage'));
 const ProductPage = lazy(() => import('@pages/product-page/ProductPage'));
+const ShoppingCartPage = lazy(() => import('@pages/shopping_cart-page/ShoppingCartPage'));
 const ErrorPage = lazy(() => import('@pages/error-page/ErrorPage'));
 
 const routes: RouteObject[] = [
@@ -52,9 +53,15 @@ const routes: RouteObject[] = [
                         )
                     },
                     {
-                        path: paths.product,
+                        path: paths.product_detail,
                         element: (
                             <ProductPage/>
+                        )
+                    },
+                    {
+                        path: paths.shopping_cart,
+                        element: (
+                            <ShoppingCartPage/>
                         )
                     },
                 ]

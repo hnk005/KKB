@@ -5,7 +5,7 @@ import ProductListCart from "@/components/secsions/product/ProductListCard";
 
 const HomePage = () : ReactElement => {
     return (
-        <Container sx= {{backgroundColor: 'common.black'}}>
+        <Container maxWidth= 'xl' sx= {{backgroundColor: 'common.black'}}>
            <ProductListCart/>
         </Container>
     )
