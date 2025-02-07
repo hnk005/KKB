@@ -1,7 +1,7 @@
-import { Monka3075 } from '@/assets/product/Monka 3075 Pro V2';
 import { ProductItem } from '@core/interface';
+import { MONKA_3075_PRO_V2 } from './product/Monka3075ProV2';
 
-const productItems : ProductItem[] = [Monka3075]
+const productItems : ProductItem[] = [MONKA_3075_PRO_V2]
 
 export default productItems;
 
