@@ -1,47 +1,41 @@
-export interface ProductItem {
-    id: number;
+export interface PRODUCT {
+    id: string;
     name: string,
     brand: string,
-    images: string[],
-    rate: number | 0,
-    quantityRate: number | 0,
-    bestSeller: boolean,
-    detail_Id: number,
-    variants_Id: number[],
+    variants: VARIANTS [],
+    info: any,
 }
 
-export interface Variants {
-    id: number,
-    SKU: string,
-    color: string, 
-    switchType: string, 
+export interface VARIANTS {
+    id: string,
     price: number,
+    SKU: string,
+    image: string,
     status: boolean,
+    rate: number | 0,
+    quantityRate: number | 0,
+    option?: {key: string, value: string}[]
+    bestSeller: boolean,
     originalPrice?: number,
     originalUnit: string,
     quantity: number,
 }
 
-export interface ProductItemDetails {
-    id: number,
-    layout: string,
-    hotswap: boolean,
-    pinSupport?: number,
-    switchType?: string[],
-    pin?: number,
-    pinUnit?: string,
-    led: boolean,
-    ledEffect?: string,
-    circuit: string,
-    connect: string[],
-    keycap: string,
-    platformSupport: string[],
-    cableLen: number,
-    cableUnit: string,
-    size: number[],
-    sizeUnit: string,
-    foam: boolean,
-    foamMaterial: string[],
+export interface PRODUCT_ITEM {
+    id: string;
+    name: string,
+    brand: string,
+    price: number,
+    SKU: string,
+    image: string,
+    status: boolean,
+    rate: number | 0,
+    quantityRate: number | 0,
+    option?: {key: string, value: string}[]
+    originalPrice?: number,
+    originalUnit: string,
+    quantity: number,
+    info: any,
 }
 
 export interface NotificationItem {
