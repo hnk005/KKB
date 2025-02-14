@@ -1,42 +1,17 @@
-export interface PRODUCT {
-    id: string;
+export interface Product {
+    id: number,
     name: string,
-    brand: string,
-    variants: VARIANTS [],
-    info: any,
+    image: string,
+    price: {
+        originalPrice: number,
+        discountedPrice?: number,
+        unit: string,
+    }
+    rate: number,
+    quantityRate: number,
+    bestSaller: boolean,
 }
 
-export interface VARIANTS {
-    id: string,
-    price: number,
-    SKU: string,
-    image: string,
-    status: boolean,
-    rate: number | 0,
-    quantityRate: number | 0,
-    option?: {key: string, value: string}[]
-    bestSeller: boolean,
-    originalPrice?: number,
-    originalUnit: string,
-    quantity: number,
-}
-
-export interface PRODUCT_ITEM {
-    id: string;
-    name: string,
-    brand: string,
-    price: number,
-    SKU: string,
-    image: string,
-    status: boolean,
-    rate: number | 0,
-    quantityRate: number | 0,
-    option?: {key: string, value: string}[]
-    originalPrice?: number,
-    originalUnit: string,
-    quantity: number,
-    info: any,
-}
 
 export interface NotificationItem {
     image: string,

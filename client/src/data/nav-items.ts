@@ -8,19 +8,25 @@ export interface NavItem {
 const navItems: NavItem[] = [
   {
     id: 1,
-    path: '#1',
-    title: 'Sản phẩm',
+    path: '#best-seller',
+    title: 'Bán chạy',
     active: true,
   },
   {
     id: 2,
-    path: '#2',
+    path: '#discount',
     title: 'Giảm giá',
     active: true,
   },
   {
     id: 3,
-    path: '#3',
+    path: '#nomarl',
+    title: 'Sản Phẩm',
+    active: true,
+  },
+  {
+    id: 4,
+    path: '#contact',
     title: 'Liên hệ',
     active: true,
   },

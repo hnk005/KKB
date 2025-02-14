@@ -26,7 +26,7 @@
       "@/*": ["./src/*"],
       "@public/*": ["./public/*"],
       "@assets/*": ["./src/assets/*"],
-      "@components/*": ["./src/components/*"], 
+      "@components/*": ["src/components/*"], 
       "@core/*": ["./src/core/*"], 
       "@data/*": ["./src/data/*"], 
       "@hook/*": ["./src/hook/*"],

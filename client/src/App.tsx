@@ -1,11 +1,11 @@
 import "./index.css"
 import { Suspense } from 'react';
-import LandingPage from "./landing-page";
+import Layout from "./layout";
 
 function App() {
   return (
     <Suspense fallback>
-      <LandingPage />
+      <Layout/>
     </Suspense>
   )
 }

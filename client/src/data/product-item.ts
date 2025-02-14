@@ -1,27 +1,90 @@
-import { PRODUCT } from '@core/interface';
-import { MONKA_3075_PRO_V2 } from './product/Monka3075ProV2';
-function compareArrays(arr1, arr2) {
-  // Kiểm tra nếu cả 2 mảng có cùng độ dài
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
+import { Product } from "@/core/interface";
+import image1 from "@assets/images/product/Monka 3075 Pro V2/main.png";
+import image2 from "@assets/images/product/Logitech Pop Keys/main.png";
+import image3 from "@assets/images/product/Keychron K3 V2/main.png";
+import image4 from "@assets/images/product/Akko 5108B Plus Demon Slayer – Kamado Nezuko/main.png";
+import image5 from "@assets/images/product/E-Dra EK368L/main.png";
+import image6 from "@assets/images/product/Razer DeathStalker V2 Pro Tenkeyless/main.png";
 
-  // Kiểm tra từng đối tượng trong mảng
-  for (let i = 0; i < arr1.length; i++) {
-    const item1 = arr1[i];
-    const item2 = arr2[i];
-
-    // Kiểm tra key và value có giống nhau không
-    if (item1.key !== item2.key || item1.value !== item2.value) {
-      return false;
-    }
-  }
-
-  return true;
-}
-
-
-const listProduct: PRODUCT[] = [MONKA_3075_PRO_V2]
+const listProduct: Product[] = [
+  {
+    id: 1,
+    name: "Monka 3075 Pro V2",
+    image: image1,
+    price: {
+      originalPrice: 1400000,
+      discountedPrice: 1350000,
+      unit: "đ",
+    },
+    bestSaller: true,
+    rate: 4,
+    quantityRate: 20,
+  },
+  {
+    id: 2,
+    name: "Logitech Pop Keys",
+    image: image2,
+    price: {
+      originalPrice: 2499000,
+      unit: "đ",
+    },
+    bestSaller: true,
+    rate: 4.5,
+    quantityRate: 10,
+  },
+  {
+    id: 3,
+    name: "Keychron K3 V2",
+    image: image3,
+    price: {
+      originalPrice: 1890000,
+      discountedPrice: 1790000,
+      unit: "đ",
+    },
+    bestSaller: false,
+    rate: 3,
+    quantityRate: 21,
+  },
+  {
+    id: 4,
+    name: "Akko 5108B Plus Demon Slayer – Kamado Nezuko",
+    image: image4,
+    price: {
+      originalPrice: 2999000,
+      discountedPrice: 2790000,
+      unit: "đ",
+    },
+    bestSaller: true,
+    rate: 5,
+    quantityRate: 12,
+  },
+  {
+    id: 5,
+    name: "E-Dra EK368L",
+    image: image5,
+    price: {
+      originalPrice: 499000,
+      discountedPrice: 449000,
+      unit: "đ",
+    },
+    bestSaller: false,
+    rate: 3,
+    quantityRate: 2,
+  },
+  {
+    id: 6,
+    name: "Razer DeathStalker V2 Pro Tenkeyless",
+    image: image6,
+    price: {
+      originalPrice: 4190000,
+      discountedPrice: 4149000,
+      unit: "đ",
+    },
+    bestSaller: false,
+    rate: 4,
+    quantityRate: 5,
+  },
+]
 
 export default listProduct;
 
