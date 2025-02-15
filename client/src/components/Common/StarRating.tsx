@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const StarRating = ({ rate }: { rate: number }) => {
     const totalStars = 5;
     return (
@@ -21,4 +23,4 @@ const StarRating = ({ rate }: { rate: number }) => {
     );
 };
 
-export default StarRating;
+export default memo(StarRating);

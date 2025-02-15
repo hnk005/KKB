@@ -1,21 +1,19 @@
+import { memo } from "react"
 import { Product } from "@/core/interface"
 import { roundNumber } from "@/utils/roundNumber"
 import StarRating from "./StarRating"
 
 interface ProductItemProps {
-    title: string,
     item: Product, 
-    index: number, 
-    quantityAppears: number,
 }
 
-const ProductItem : React.FC<ProductItemProps> = ({  title, item, index, quantityAppears}) => {
+const ProductItem : React.FC<ProductItemProps> = ({ item}) => {
     return (
-        <div key={index} className={`flex-none w-1/${quantityAppears} p-4 rounded-lg shadow-lg hover:bg-green-950`} id={`product-${title}-select-${index + 1}`}>
+        <div className={`flex-none p-4 rounded-lg shadow-lg hover:bg-green-950 animate-fade-in`}>
             <div className="flex flex-col w-full h-full justify-between items-center gap-20">
                 <img src={item.image} alt={item.name} className="w-[70%] h-24 object-cover mb-4 rounded-lg" />
                 <div className="flex flex-col justify-around items-center gap-4">
-                    <h3 className="text-2xl text-center font-semibold line-clamp-1">{item.name}</h3>
+                    <h3 className="text-2xl text-center font-semibold w-[80%] line-clamp-1 cursor-help" title= {item.name} >{item.name}</h3>
                     <div className="flex justify-center gap-5">
                         <StarRating rate={item.rate} />
                         <span className="flex gap-2 text-gray-400">
@@ -57,4 +55,4 @@ const ProductItem : React.FC<ProductItemProps> = ({  title, item, index, quantit
     )
 }
 
-export default ProductItem;
+export default memo(ProductItem);

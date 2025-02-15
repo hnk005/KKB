@@ -20,7 +20,8 @@ html, body { height: 100%;}
 body { 
   margin: 0; 
   line-height: 1.6rem;
-  overflow: auto !important;
+  overflow: auto;
+  overflow-x: hidden;
   padding-right: 0 !important;
   @apply bg-gray-900;
   @apply text-white;
@@ -46,4 +47,8 @@ a {
 
 ul {
   list-style-type: none;
+}
+
+:root {
+  --swiper-navigation-color: @apply bg-gray-700;
 }
