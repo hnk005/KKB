@@ -2,33 +2,33 @@ export interface NavItem {
   id: number;
   path: string;
   title: string;
-  active: boolean;
 }
 
 const navItems: NavItem[] = [
   {
     id: 1,
-    path: '#best-seller',
-    title: 'Bán chạy',
-    active: true,
+    path: '#home-section',
+    title: 'Trang chủ',  
   },
   {
     id: 2,
-    path: '#discount',
-    title: 'Giảm giá',
-    active: true,
+    path: '#best-seller-section',
+    title: 'Bán chạy',
   },
   {
     id: 3,
-    path: '#nomarl',
-    title: 'Sản Phẩm',
-    active: true,
+    path: '#discount-section',
+    title: 'Giảm giá',
   },
   {
     id: 4,
-    path: '#contact',
+    path: '#nomarl-section',
+    title: 'Sản Phẩm',
+  },
+  {
+    id: 5,
+    path: '#contact-section',
     title: 'Liên hệ',
-    active: true,
   },
 ];
 

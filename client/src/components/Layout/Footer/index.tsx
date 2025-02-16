@@ -16,9 +16,6 @@ const Footer = () => {
                 <div>
                     <h3 className="text-lg font-semibold mb-3">Liên kết</h3>
                     <ul className="text-gray-400 space-y-2">
-                        <li>
-                            <a href="/" className="hover:text-white transition">Trang chủ</a>
-                        </li>
                         {navItems.map((item) => (
                             <li>
                                 <a href= {item.path} className="hover:text-white transition">{item.title}</a>

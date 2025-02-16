@@ -1,24 +1,31 @@
-import { ReactElement, useState } from 'react'
+import { act, ReactElement, useCallback, useEffect, useState } from 'react'
 import {
     PopoverGroup,
-} from '@headlessui/react'
-import logo from "@assets/images/logo/Logo.png";
+} from '@headlessui/react';
 import navItems from '@/data/nav-items';
+import Logo from './Logo';
 
 const Header = (): ReactElement => {
+    const [sticky, setSticky] = useState(false);
+
+    const handleScroll = useCallback(() => {
+        setSticky(window.scrollY >= 100);
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
-        <header className="bg-transparent">
+        <header
+            className={`fixed top-0 z-40 w-full transition-all duration-300 ${sticky ? " shadow-lg bg-white dark:bg-gray-900 py-4" : "shadow-none py-8"
+                }`}
+        >
             <nav aria-label="Global" className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md flex items-center justify-between p-6 lg:px-8 max-h-[96px] min-h-[48] h-[10vw]">
-                <div className="flex lg:flex-1 select-none">
-                    <a href="/" className="flex -m-1.5 p-1.5 items-center">
-                        <img
-                            alt=""
-                            src={logo}
-                            className="h-20 w-auto max-md:h-16"
-                        />
-                        <span className="text-2xl font-semibold text-green-400">KKB</span>
-                    </a>
-                </div>
+                <Logo />
                 <PopoverGroup className="hidden lg:flex lg:gap-x-12 text-xl font-semibold ">
                     {navItems.map((nav, index) =>
                         <a key={index} href={nav.path}>
