@@ -5,7 +5,7 @@ import keycap from "@assets/images/product/keycap.png";
 const Hero = (): ReactElement => {
     return (
         <section id= "home-section">
-            <div className="flex items-center justify-center min-h-screen px-6">
+            <div className="flex items-center justify-center min-h-screen px-6 py-10 mt-[96px]">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-6xl">
                     <div className="space-y-6">
                         <h1 className="text-5xl font-bold leading-tight">

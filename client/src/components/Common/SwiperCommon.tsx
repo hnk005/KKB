@@ -7,27 +7,29 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 interface SwiperCommonProps {
-    slidesPerView: number;
     children: ReactElement[];
 }
 
-const SwiperCommon = ({ slidesPerView, children }: SwiperCommonProps): ReactElement => {
+const SwiperCommon = ({ children }: SwiperCommonProps): ReactElement => {
     return (
-        <>
-            <Swiper
-                modules={[Navigation, Scrollbar, A11y]}
-                spaceBetween={50}
-                slidesPerView={slidesPerView}
-                navigation
-            >
-                {children.map((child, index) => (
-                    <SwiperSlide key={index}>
-                        {child}
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-        </>
-
+        <Swiper
+            loop={true}
+            modules={[Navigation, Scrollbar, A11y]}
+            spaceBetween={50}
+            breakpoints={{
+                320: { slidesPerView: 1 },
+                640: { slidesPerView: 2 }, 
+                1024: { slidesPerView: 2 }, 
+                1280: { slidesPerView: 3 },
+            }}
+            navigation
+        >
+            {children.map((child, index) => (
+                <SwiperSlide key={index}>
+                    {child}
+                </SwiperSlide>
+            ))}
+        </Swiper>
     );
 };
 

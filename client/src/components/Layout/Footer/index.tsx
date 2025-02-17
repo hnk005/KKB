@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 {/* Logo & Giới thiệu */}
                 <div>
-                    <h2 className="text-2xl font-bold">KKB</h2>
+                    <h2 className="text-2xl max-lg:text-lg font-bold">KKB</h2>
                     <p className="text-gray-400 mt-2">
                         KKB cung cấp những sản phẩm bàn phím chất lượng cao với nhiều ưu đãi hấp dẫn.
                     </p>
@@ -14,7 +14,7 @@ const Footer = () => {
 
                 {/* Liên kết nhanh */}
                 <div>
-                    <h3 className="text-lg font-semibold mb-3">Liên kết</h3>
+                    <h3 className="text-2xl max-lg:text-lg  font-semibold mb-3">Liên kết</h3>
                     <ul className="text-gray-400 space-y-2">
                         {navItems.map((item) => (
                             <li>
@@ -26,7 +26,7 @@ const Footer = () => {
 
                 {/* Liên hệ */}
                 <div>
-                    <h3 className="text-lg font-semibold mb-3">Liên hệ</h3>
+                    <h3 className="text-2xl max-lg:text-lg  font-semibold mb-3">Liên hệ</h3>
                     <p className="text-gray-400">📍 34, đường số 9 Phạm Hùng, Bình Chánh</p>
                     <p className="text-gray-400">📞 +84-356-333-130</p>
                     <p className="text-gray-400">✉ huynhnamkha512020@gmail.com</p>
@@ -34,7 +34,7 @@ const Footer = () => {
 
                 {/* Mạng xã hội */}
                 <div>
-                    <h3 className="text-lg font-semibold mb-3">Kết nối với chúng tôi</h3>
+                    <h3 className="text-2xl max-lg:text-lg font-semibold mb-3">Kết nối với chúng tôi</h3>
                     <div className="flex space-x-4">
                         <a href="https://www.facebook.com/huynh.namkha.12" className="hover:text-gray-400 transition">
                             <svg

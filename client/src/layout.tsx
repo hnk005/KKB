@@ -12,7 +12,6 @@ const Layout = () : ReactElement => {
             <CartIcon/>
             <Footer />
         </>
-        
     )
 }
 
