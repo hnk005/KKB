@@ -1,4 +1,4 @@
-export interface Product {
+export interface ProductInterface {
     id: number,
     name: string,
     image: string,
@@ -10,6 +10,12 @@ export interface Product {
     rate: number,
     quantityRate: number,
     bestSaller: boolean,
+}
+
+export interface UserInterface {
+    name: string,
+    avatar?: string,
+    logout: () => void,
 }
 
 

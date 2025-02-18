@@ -2,7 +2,7 @@ import { ReactElement } from "react"
 import Header from "./components/Layout/Header"
 import Footer from "./components/Layout/Footer"
 import Page from "./page"
-import CartIcon from "./components/CartIcon"
+import CartIcon from "./components/Cart"
 
 const Layout = () : ReactElement => {
     return (

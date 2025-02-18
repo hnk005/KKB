@@ -1,11 +1,11 @@
-import { ReactElement, useState } from "react";
+import { ReactElement } from "react";
 import keyboard from "@assets/images/product/keyboard.jpg";
 import keycap from "@assets/images/product/keycap.png";
 
 const Hero = (): ReactElement => {
     return (
         <section id= "home-section">
-            <div className="flex items-center justify-center min-h-screen px-6 py-10 mt-[96px]">
+            <div className="flex items-center justify-center min-h-screen px-6 py-10 max-md:mt-[68px] mt-[96px]">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-6xl">
                     <div className="space-y-6">
                         <h1 className="text-5xl font-bold leading-tight">
@@ -27,7 +27,7 @@ const Hero = (): ReactElement => {
                             alt="Bàn phím Monka"
                             className="relative w-full max-w-md mx-auto rounded-lg shadow-lg" />
 
-                        <div className="absolute -bottom-6 -left-6 bg-gray-800 p-3 rounded-xl flex items-center space-x-3 shadow-lg">
+                        <div className="absolute -bottom-6 -left-6 m-2 bg-gray-800 p-3 rounded-xl flex items-center space-x-3 shadow-lg">
                             <img src={keycap}
                                 alt="Keycap"
                                 className="w-12 h-12 rounded-md" />

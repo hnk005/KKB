@@ -1,4 +1,4 @@
-import { Product } from "@/core/interface";
+import { ProductInterface } from "@/core/interface";
 import image1 from "@assets/images/product/Monka 3075 Pro V2/main.png";
 import image2 from "@assets/images/product/Logitech Pop Keys/main.png";
 import image3 from "@assets/images/product/Keychron K3 V2/main.png";
@@ -6,7 +6,7 @@ import image4 from "@assets/images/product/Akko 5108B Plus Demon Slayer – Kama
 import image5 from "@assets/images/product/E-Dra EK368L/main.png";
 import image6 from "@assets/images/product/Razer DeathStalker V2 Pro Tenkeyless/main.png";
 
-const listProduct: Product[] = [
+const listProduct: ProductInterface[] = [
   {
     id: 1,
     name: "Monka 3075 Pro V2",

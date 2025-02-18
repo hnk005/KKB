@@ -1,5 +1,5 @@
 import listProduct from '@/data/product-item';
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
 import imageBestSeller from '@assets/images/sell/best-seller.png';
 import ProductItem from '@/components/Common/ProductItem';
 import SwiperCommon from '@/components/Common/SwiperCommon';

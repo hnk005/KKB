@@ -1,10 +1,10 @@
 import { memo } from "react";
-import { Product } from "@/core/interface";
+import { ProductInterface } from "@/core/interface";
 import { roundNumber } from "@/utils/roundNumber";
 import StarRating from "./StarRating";
 
 interface ProductItemProps {
-    item: Product;
+    item: ProductInterface;
 }
 
 const ProductItem: React.FC<ProductItemProps> = ({ item }) => {

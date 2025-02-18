@@ -1,21 +1,19 @@
-import { ReactElement } from "react";
+import { ReactElement, useContext } from "react";
 import { Transition } from "@headlessui/react";
 import navItems from "@data/nav-items";
 import Logo from "../../Logo";
+import { AuthContext } from "@/providers/AuthProvider";
 
 interface SideBarProps {
     isOpen: boolean;
     activeId: number;
     handleCloseSidebar: () => void;
     handleNavClick: (id: number, path: string) => void;
-    handleOpenLogin: () => void;
-    handleOpenRegister: () => void;
 }
 
-const Sidebar: React.FC<SideBarProps> = ({ 
-    activeId, isOpen, handleCloseSidebar, 
-    handleNavClick, handleOpenLogin,
-    handleOpenRegister}): ReactElement => {
+const Sidebar: React.FC<SideBarProps> = ({ activeId, isOpen, handleCloseSidebar, handleNavClick }): ReactElement => {
+    const { isReady, handleOpenLogin, handleOpenRegister, logout } = useContext(AuthContext);
+
     return (
         <Transition show={isOpen} as="div" className="relative z-50">
             <Transition.Child
@@ -61,14 +59,23 @@ const Sidebar: React.FC<SideBarProps> = ({
                         </a>
                     ))}
                 </nav>
-                <div className="mt-auto space-y-3">
+                {!isReady && <div className="mt-auto space-y-3">
                     <button onClick={handleOpenLogin} className="w-full py-2 text-gray-800 dark:text-white rounded-lg hover:bg-green-500 dark:hover:bg-green-400">
                         Đăng nhập
                     </button>
                     <button onClick={handleOpenRegister} className="w-full py-2 bg-green-500 text-white rounded-lg hover:opacity-80">
                         Đăng ký
                     </button>
-                </div>
+                </div>}
+                {isReady && <div className="mt-auto space-y-3">
+                    <button
+                        onClick={logout}
+                        type="submit"
+                        className="block w-full px-4 rounded-md py-2 text-center bg-red-500 text-sm data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
+                    >
+                        Đăng xuất
+                    </button>
+                </div>}
             </Transition.Child>
         </Transition>
     );

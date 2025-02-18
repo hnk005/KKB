@@ -6,10 +6,9 @@ import Register from "./Register";
 
 interface AuthProps {
     openLogin: boolean;
-    onClose: () => void;
 }
 
-const Auth: React.FC<AuthProps> = ({ openLogin, onClose}) => {
+const Auth: React.FC<AuthProps> = ({ openLogin }) => {
     const [isLogin, setIsLogin] = useState(openLogin);
 
     return (
